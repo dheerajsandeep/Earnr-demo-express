@@ -1,0 +1,51 @@
+<%- include("_header") -%>
+
+    <h1>List of Registered customers</h1>
+
+    <h1>List of Customers (<%= model.length %>)</h1>
+
+    <div class="table-responsive-sm">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Date of birth</th>
+                    <th>Email</th>
+                    <th> Phone Number</th>
+                    <th>Fund Option</th>
+                    <th>Fund Amount</th>
+                    <!-- <th class="d-print-none">
+          <a class="btn btn-sm btn-success" href="/create">Add</a>
+        </th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <% for (const customer of model) { %>
+                    <tr>
+                        <td><%= customer.Customer_ID %></td>
+                        <td>
+                            <%= customer.First_name %>
+                        </td>
+                        <td>
+                            <%= customer.Last_name %>
+                        </td>
+                        <td><%= customer.dob %></td>
+                        <td><%= customer.email %></td>
+                        <td><%= customer.phone_number %></td>
+                        <td><%= customer.fund_options %><</td>
+                        <td>
+                            <%= customer.fund_amount %>
+                        </td>
+                        <td class="d-print-none">
+                            <a class="btn btn-sm btn-warning" href="/edit/<%= customer.Customer_ID %>">Edit</a>
+                            <a class="btn btn-sm btn-danger" href="/delete/<%= customer.Customer_ID %>">Delete</a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <%- include("_footer") -%>

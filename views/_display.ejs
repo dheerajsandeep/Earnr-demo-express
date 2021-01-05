@@ -1,0 +1,62 @@
+
+    <div class="form-group row">
+        <label class="col-form-label col-sm-2" for="First_name">First name</label>
+        <div class="col-sm-8">
+            <input readonly class="form-control" name="First_name" value="<%= model.First_name %>" />
+        </div>
+        </div>
+    
+        <div class="form-group row">
+            <label class="col-form-label col-sm-2" for="Last_name">Last Name</label>
+            <div class="col-sm-7">
+                <input readonly class="form-control" name="Last_name" value="<%= model.Last_name %>" />
+            </div>
+        </div>
+    
+        <div class="form-group row">
+            <label class="col-form-label col-sm-2" for="dob">Date Of birth</label>
+            <div class="col-sm-7">
+                <input readonly class="form-control" name="dob" value="<%= model.dob %>" />
+            </div>
+        </div>
+    
+        <div class="form-group row">
+            <label class="col-form-label col-sm-2" for="email">Email</label>
+            <div class="col-sm-7">
+                <input readonly class="form-control" name="email" value="<%= model.email %>" />
+            </div>
+        </div>
+    
+        <div class="form-group row">
+            <label class="col-form-label col-sm-2" for="phone_number">Phone Number</label>
+            <div class="col-sm-7">
+                <input readonly class="form-control" name="phone_number" value="<%= model.phone_number %>" />
+            </div>
+        </div>
+    
+        <div class="form-group row">
+            <label class="col-form-label col-sm-2" for="dob">Fund Option</label>
+    
+            <div class="form-check">
+                <input readonly class="form-check-input" type="radio" name="fund_options" id="fund_options" value="Premium">
+                <label class="form-check-label" for="fund_options">
+                    Premium <em>10000-250000</em>
+                </label>
+            </div>
+    
+            <div class="form-check">
+                <input readonly class="form-check-input" type="radio" name="fund_options" id="fund_options" value="Select">
+                <label class="form-check-label" for="fund_options">
+                    Select <em>25000-250000</em>
+                </label>
+            </div>
+    
+        </div>
+    
+        <div class="form-group row" id="fundAmount">
+            <label class="col-form-label col-sm-2" for="fund_amount">Fund amount</label>
+            <div class="col-sm-7">
+                <input readonly class="form-control" name="fund_amount" value="<%= model.fund_amount %>" />
+              
+            </div>
+        </div>
