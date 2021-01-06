@@ -59,29 +59,32 @@
     <div class="form-group row" id="fundAmount">
         <label class="col-form-label col-sm-2" for="fund_amount">Fund amount</label>
         <div class="col-sm-7">
-            <input class="form-control" name="fund_amount" value="<%= model.fund_amount %>" />
-            <small id="fundCheck" class="form-text 
+            <input onblur="myFunction()" class="form-control" name="fund_amount" value="<%= model.fund_amount %>" />
+            <!-- <small id="fundCheck" class="form-text 
             text-muted invalid-feedback">
                 Please enter a valid Amount as per the Fund selected.
-            </small>
+            </small> -->
         </div>
     </div>
 
-    <script>
+   
 
-        const fund_amount =
-            document.getElementById('fundAmount');
-        email.addEventListener('blur', () => {
-            let s = $('#fund_options'.val());
-            if (s.equals("Premium")) {
-               if(fundAmount<10000 || fundAmount>250000){
-                   fund_amount.classList.remove('is-invalid');
-                   fundError =true  ;}
-            }
-            else {
-                fund_amount.classList.add(
-                    'is-invalid');
-                fundError = false;
-            }
-        }) 
-    </script>
+
+
+<script>
+    function myFunction() {
+        var x, y, text;
+        x = document.getElementById("fund_options").value;
+        y = document.getElementById("fundAmount").value;
+
+        if (x.equals("Premium") && (y < 10000 || y > 250000)) {
+            text = "The amount entered is invalid. Plese enter another amounnt within range "
+        } else if (x.equals("Select") && (y < 25000 || y > 250000)) {
+            text = "The amount entered is invalid. Plese enter another amounnt within range "
+        }else{
+            text ="fund Amount valid";
+            return true;
+        }
+
+    }
+</script>
